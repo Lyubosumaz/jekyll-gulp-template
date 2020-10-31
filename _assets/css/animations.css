@@ -1,0 +1,92 @@
+.page-animations .site-main h1,
+.page-animations .site-header,
+.page-animations .site-footer {
+    display: none;
+}
+
+.page-animations {
+    min-height: 100vh;
+}
+
+/* .box {
+    width: 5rem;
+    height: 5rem;
+    background: #f00;
+    position: absolute;
+    animation: around 4s linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+.box {
+    width: 20em;
+    height: 15em;
+    border: 2px solid #000;
+    margin: 2em auto;
+}
+
+.box:hover {
+    animation: shake 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em, -2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2em);
+    }
+    40% {
+        transform: translate(2em);
+    }
+    60% {
+        transform: translate(-1em);
+    }
+    80% {
+        transform: translate(1em);
+    }
+    80% {
+        transform: translate(0);
+    }
+}
+
+@keyframes around {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 0;
+        left: calc(100% - 5rem);
+    }
+
+    50% {
+        top: calc(100% - 5rem);
+        left: calc(100% - 5rem);
+    }
+
+    75% {
+        top: calc(100% - 5rem);
+        left: 0;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+}

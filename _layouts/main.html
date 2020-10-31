@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{{site.title}}</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css" />
+        <script src="{{ site.baseurl }}/scripts/site.js"></script>
+    </head>
+    <body
+        class="
+            {% if page.title %}page page-{{ page.title | slugify }}{% endif %}
+            {% if post.title %}post{% endif %}
+            {% if home.home %}home{% endif %}
+        "
+    >
+        <div class="site">
+            <header class="site-header">
+                {% if page.home == true %}
+                <h1 class="site-title">
+                    <a href="{{ site.baseurl }}/">{{site.title}}</a>
+                </h1>
+                {% else %}
+                <p class="site-title">
+                    <a href="{{ site.baseurl }}/">{{site.title}}</a>
+                </p>
+                {% endif %} {% include navigation.html location="header" %}
+            </header>
+
+            <main class="site-main">
+                {% if page.title %}
+                <h1>{{page.title}}</h1>
+                {% endif %} {{content}}
+            </main>
+
+            {% include sidebar.html %}
+
+            <footer class="site-footer">
+                <p>All rights reserved &copy; {{ site.title }} {% include navigation.html location="footer" %}</p>
+            </footer>
+        </div>
+    </body>
+</html>

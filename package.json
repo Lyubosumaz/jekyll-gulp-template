@@ -1,0 +1,30 @@
+{
+    "name": "jekyll-gulp-template-2020",
+    "version": "1.0.0",
+    "description": "Copy and play it",
+    "main": "gulpfile.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "browser-sync": "^2.26.13",
+        "child_process": "^1.0.2",
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-exec": "^5.0.0",
+        "gulp-sass": "^4.1.0",
+        "node-sass": "^5.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+"
+    },
+    "homepage": ""
+}
