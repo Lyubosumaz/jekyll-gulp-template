@@ -22,7 +22,13 @@ title: Jekyll and Gulp Template
 email: Template@example.com
 description: I'm lazy! Everything is copy-paste to places..
 destination: docs
+
+# Local:
 baseurl: '' # the subpath of your site, e.g. /blog
+
+# Deploy:
+# baseurl: '/jekyll-gulp-template' # the subpath of your site, e.g. /blog
+
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Lyubosumaz
 github_username: Lyubosumaz
