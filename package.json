@@ -20,6 +20,7 @@
         "node-sass": "^5.0.0"
     },
     "scripts": {
+        "profile": "bundle exec jekyll build --profile",
         "deploy": "gulp deploy && git commit -am \"update and ready for production\" && git push",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

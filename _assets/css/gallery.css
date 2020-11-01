@@ -140,33 +140,3 @@
     height: auto;
     display: block;
 }
-
-.modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-
-.modal .inner {
-    max-width: 90vw;
-    max-height: 90vw;
-    display: block;
-    background: #fff;
-    padding: 2em;
-    border-radius: 0.3em;
-    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-}
-
-.modal .inner {
-    width: 100%;
-    height: auto;
-    display: block;
-}
