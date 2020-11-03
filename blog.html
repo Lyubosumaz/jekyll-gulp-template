@@ -6,11 +6,11 @@ icon: fa-rss
 permalink: /blog/
 ---
 
-<section>
-    <header>
-        <h2>Latest Posts</h2>
-    </header>
+<section class="mag">
+    <div class="content">{% include article.html class="huge" %} {% include article.html class="featured" %} {% include article.html %} {% include article.html %} {% include article.html class="featured"%} {% include article.html %} {% include article.html %} {% include article.html %}</div>
+</section>
 
+<section>
     <div class="content">
         <ul>
             {% for post in site.posts %}

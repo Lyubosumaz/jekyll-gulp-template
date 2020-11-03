@@ -8,6 +8,9 @@
   --color-body-text: #000;
   --color-body-bgrd: #fff;
   --color-link-default: #a00;
+  --color-btn-bgrd: #a00;
+  --color-btn-text: #a00;
+  --color-btn-active: #a00;
   --color-border-default: #999;
   --spacing-layout-elements: 2em; }
 
@@ -108,6 +111,36 @@ blockquote .author::before {
   content: '\2014';
   padding-right: 0.5em; }
 
+.button {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: var(--color-link-default);
+  color: var(--color-body-bgrd);
+  border-radius: 0.3em;
+  border: 1px solid transparent; }
+
+.button:hover {
+  background-color: var(--color-body-bgrd);
+  color: var(--color-link-default);
+  border-color: var(--color-link-default); }
+
+.button-secondary {
+  background-color: var(--color-body-bgrd);
+  color: var(--color-link-default);
+  border-color: var(--color-link-default); }
+
+.button-secondary {
+  text-decoration: underline; }
+
+.button-wrapper {
+  display: flex; }
+
+.button-wrapper .button {
+  display: block; }
+
+.button-wrapper .button + .button {
+  margin-left: 1em; }
+
 .site {
   max-width: var(--layout-main-width);
   margin: 0 auto;
@@ -131,6 +164,47 @@ blockquote .author::before {
         align-items: center; }
       .site .site-header nav {
         margin-left: auto; } }
+
+.page-blog .site {
+  grid-template-areas: 'header header' 'main main' 'footer footer'; }
+
+.mag {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2em; }
+
+.mag .content {
+  display: contents; }
+
+.mag .article {
+  grid-column: span 2;
+  padding-bottom: 2em; }
+
+.mag .article.featured {
+  grid-column: span 4; }
+
+.mag .article.huge {
+  grid-column: span 6; }
+
+.mag .article .media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.3em;
+  box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 1em; }
+
+.mag .article .media::before {
+  display: block;
+  content: '';
+  padding-top: 56.25%; }
+
+.mag .article .media img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .site-header {
   border-bottom: 1px solid var(--color-border-default);
