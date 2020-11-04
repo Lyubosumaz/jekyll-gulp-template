@@ -5,32 +5,32 @@
     color: var(--color-body-bgrd);
     border-radius: 0.3em;
     border: 1px solid transparent;
-}
 
-.button:hover {
-    background-color: var(--color-body-bgrd);
-    color: var(--color-link-default);
-    border-color: var(--color-link-default);
-}
+    &:hover {
+        background-color: var(--color-body-bgrd);
+        color: var(--color-link-default);
+        border-color: var(--color-link-default);
+    }
 
-.button-secondary {
-    background-color: var(--color-body-bgrd);
-    color: var(--color-link-default);
-    border-color: var(--color-link-default);
-}
+    &-secondary {
+        background-color: var(--color-body-bgrd);
+        color: var(--color-link-default);
+        border-color: var(--color-link-default);
 
-.button-secondary {
-    text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .button-wrapper {
     display: flex;
-}
 
-.button-wrapper .button {
-    display: block;
-}
+    & .button {
+        display: block;
 
-.button-wrapper .button + .button {
-    margin-left: 1em;
+        & + .button {
+            margin-left: 1em;
+        }
+    }
 }

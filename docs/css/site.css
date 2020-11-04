@@ -118,28 +118,23 @@ blockquote .author::before {
   color: var(--color-body-bgrd);
   border-radius: 0.3em;
   border: 1px solid transparent; }
-
-.button:hover {
-  background-color: var(--color-body-bgrd);
-  color: var(--color-link-default);
-  border-color: var(--color-link-default); }
-
-.button-secondary {
-  background-color: var(--color-body-bgrd);
-  color: var(--color-link-default);
-  border-color: var(--color-link-default); }
-
-.button-secondary {
-  text-decoration: underline; }
+  .button:hover {
+    background-color: var(--color-body-bgrd);
+    color: var(--color-link-default);
+    border-color: var(--color-link-default); }
+  .button-secondary {
+    background-color: var(--color-body-bgrd);
+    color: var(--color-link-default);
+    border-color: var(--color-link-default); }
+    .button-secondary:hover {
+      text-decoration: underline; }
 
 .button-wrapper {
   display: flex; }
-
-.button-wrapper .button {
-  display: block; }
-
-.button-wrapper .button + .button {
-  margin-left: 1em; }
+  .button-wrapper .button {
+    display: block; }
+    .button-wrapper .button + .button {
+      margin-left: 1em; }
 
 .site {
   max-width: var(--layout-main-width);
