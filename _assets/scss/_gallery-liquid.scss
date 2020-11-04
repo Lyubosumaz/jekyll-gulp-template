@@ -1,9 +1,11 @@
-.page-gallery-grid {
-    background: url('../images/photo_background.jpg') center;
-    background-size: cover;
+.page-gallery-liquid .site {
+    grid-template-areas:
+        'header header'
+        'main main'
+        'footer footer';
 }
 
-.gallery-grid {
+.gallery-liquid {
     margin: 0;
     padding: 0;
     display: grid;

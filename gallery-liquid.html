@@ -1,0 +1,42 @@
+---
+layout: main
+title: Gallery Liquid
+order: 3
+icon: fa-grip-horizontal
+sidebar: yes
+permalink: /gallery-liquid/
+gallery:
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603747914757-71c31f4b89f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=623&q=80
+      aspectratio: portrait
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603738279164-e6745be24f8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80
+      aspectratio: small
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603738279164-e6745be24f8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80
+      aspectratio:
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603752214110-ae4b8ff903fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80
+      aspectratio:
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603747914757-71c31f4b89f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=623&q=80
+      aspectratio: portrait
+    - caption: Image caption goes here
+      file: https://images.unsplash.com/photo-1603752214110-ae4b8ff903fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80
+      aspectratio: small
+---
+
+<section class="page-gallery-liquid">
+    <div class="content">
+        <ul class="gallery-liquid">
+            {% for item in page.gallery %}
+            <li {% if item.aspectratio %}class="{{ item.aspectratio }}{% endif %}">
+                <a href="#">
+                    <span><img src="{{ item.file }}" alt="image" /></span>
+                    <strong>{{ item.caption }}</strong>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
