@@ -34,7 +34,7 @@ gulp.task('watch', function () {
 
     gulp.watch('_assets/scss/**/*.scss', gulp.series('scss'));
 
-    gulp.watch(['./*.html', './_includes/*.html', './_layouts/*.html', './_posts/**/*.*', './**/*.js']).on('change', gulp.series('jekylldev', 'scss'));
+    gulp.watch(['./*.html', './_includes/*.html', './_layouts/*.html', './_posts/**/*.*', './scripts/*.js']).on('change', gulp.series('jekylldev', 'scss'));
 
     gulp.watch('docs/**/*.html').on('change', browserSync.reload);
     gulp.watch('docs/**/*.js').on('change', browserSync.reload);
