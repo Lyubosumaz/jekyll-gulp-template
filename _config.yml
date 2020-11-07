@@ -77,8 +77,8 @@ navigation:
       text: Contacts
       icon: fa-address-card
       items:
-        - url: /contacts/
-          text: Contacts
+        - url: /contacts/map/
+          text: Contacts Map
           icon: fa-address-card        
         - url: /contacts/
           text: Contacts
