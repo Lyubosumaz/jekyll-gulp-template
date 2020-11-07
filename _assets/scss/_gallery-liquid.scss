@@ -1,3 +1,7 @@
+/*
+* Layout rules for Gallery page
+* Update Grid areas
+*/
 .page-gallery-liquid .site {
     grid-template-areas:
         'header header'
@@ -5,6 +9,9 @@
         'footer footer';
 }
 
+/*
+* Gallery styles
+*/
 .gallery-liquid {
     margin: 0;
     padding: 0;
@@ -12,30 +19,125 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1em;
     grid-auto-flow: dense;
+    position: relative;
 
     li {
         display: block;
         list-style: none outside;
-        position: relative;
         overflow: hidden;
         grid-column: span 2;
 
-        &::before {
-            display: block;
-            content: '';
-            padding-top: 50%;
+        &:hover {
+            outline: 0.5em solid #000;
         }
 
-        &.portrait a,
-        &.small a {
+        label {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            strong {
+                display: none;
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &::before {
+                display: block;
+                content: '';
+                padding-top: calc(50% - 1em);
+            }
+
+            &.close {
+                display: none;
+                font-size: 2em;
+                width: 2em;
+                height: 2em;
+                line-height: 1;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s ease-in-out;
+                position: fixed;
+                top: 2em;
+                right: 2em;
+                background: #000;
+                color: #fff;
+                z-index: 900;
+
+                &:hover {
+                    transform: scale(1.1);
+                    outline: 1em solid #fff;
+                }
+            }
+        }
+
+        input:checked ~ label {
+            &.close {
+                display: flex;
+            }
+        }
+
+        input:checked ~ a {
             display: flex;
+        }
+
+        a {
+            width: 50vw;
+            height: 50vh;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            z-index: 100;
+            box-shadow: 0 0 100vw 90vw rgba(#000, 0.9);
+            background: rgba(#000, 0.9);
+
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            strong {
+                display: none;
+            }
         }
 
         &.portrait {
             grid-column: span 1;
             grid-row: span 2;
 
-            &::before {
+            label::before {
+                display: flex;
                 padding-top: 200%;
             }
 
@@ -49,13 +151,13 @@
             grid-column: span 1;
             grid-row: span 1;
 
+            label::before {
+                padding-top: calc(100% - 1em / 2);
+            }
+
             img {
                 width: auto;
                 height: 100%;
-            }
-
-            &::before {
-                padding-top: 100%;
             }
         }
 
@@ -71,43 +173,12 @@
         display: block;
     }
 
+    input {
+        display: none;
+    }
+
     img {
         width: 100%;
         height: auto;
-    }
-
-    li > a {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-
-    li > a:hover {
-        img {
-            position: relative;
-            z-index: 1;
-        }
-
-        &::before {
-            display: block;
-            content: '';
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        & strong {
-            position: absolute;
-            top: 1em;
-            left: 1em;
-            z-index: 3;
-            color: #fff;
-        }
     }
 }
