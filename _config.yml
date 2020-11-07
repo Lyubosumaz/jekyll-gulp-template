@@ -57,6 +57,8 @@ exclude:
     - package-lock.json
 
 navigation:
+    - url: /
+      text: Home
     - url: /blog/
       text: Blog
       icon: fa-rss
@@ -64,12 +66,12 @@ navigation:
       text: Gallery
       icon: fa-grip-horizontal
       items:
-        - url: /gallery-grid/
-          text: Gallery Grid
-          icon: fa-grip-horizontal
-        - url: /gallery-liquid/
-          text: Gallery Liquid
-          icon: fa-grip-horizontal
+          - url: /gallery-grid/
+            text: Gallery Grid
+            icon: fa-grip-horizontal
+          - url: /gallery-liquid/
+            text: Gallery Liquid
+            icon: fa-grip-horizontal
     - url: /about/
       text: About
       icon: fa-id-card-alt
@@ -77,18 +79,18 @@ navigation:
       text: Contacts
       icon: fa-address-card
       items:
-        - url: /contacts/map/
-          text: Contacts Map
-          icon: fa-address-card        
-        - url: /contacts/
-          text: Contacts
-          icon: fa-address-card        
-        - url: /contacts/
-          text: Contacts
-          icon: fa-address-card
-        - url: /contacts/
-          text: Contacts
-          icon: fa-address-card
-        - url: /contacts/
-          text: Contacts
-          icon: fa-address-card
+          - url: /contacts/map/
+            text: Contacts Map
+            icon: fa-address-card
+          - url: /contacts/
+            text: Contacts
+            icon: fa-address-card
+          - url: /contacts/
+            text: Contacts
+            icon: fa-address-card
+          - url: /contacts/
+            text: Contacts
+            icon: fa-address-card
+          - url: /contacts/
+            text: Contacts
+            icon: fa-address-card

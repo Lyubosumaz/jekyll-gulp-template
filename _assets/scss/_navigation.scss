@@ -1,25 +1,37 @@
 .site-nav {
     & > ul {
-        display: flex;
         padding: 0;
 
-        ul {
-            width: 15em;
-            padding: 0.5em;
-            display: block;
-            pointer-events: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
+        // @include bp(phone) {
+        //     flex-wrap: wrap;
 
-            li {
-                opacity: 0;
-                transform: translateY(-1em);
-                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        //     li {
+        //         margin-bottom: 0.5em;
+        //         flex-basis: 100%;
+        //     }
+        // }
 
-                @for $i from 1 to 10 {
-                    &:nth-child(#{$i}) {
-                        transition-delay: 0.1s * $i;
+        @include bp(laptop) {
+            display: flex;
+
+            ul {
+                width: 15em;
+                padding: 0.5em;
+                display: block;
+                pointer-events: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+                li {
+                    opacity: 0;
+                    transform: translateY(-1em);
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+                    @for $i from 1 to 10 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.1s * $i;
+                        }
                     }
                 }
             }
@@ -80,5 +92,56 @@
     & li.selected > a i.fas::before,
     & a:hover i.fas::before {
         color: #fff;
+    }
+}
+
+.toggle-nav-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    height: 3em;
+    position: absolute;
+    top: -0.25em;
+    right: 0.5em;
+
+    .fa-times {
+        display: none;
+    }
+}
+
+.toggle-nav {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include bp(mobile) {
+        & + .site-header {
+            .toggle-nav-btn {
+                display: flex;
+            }
+
+            .site-nav {
+                display: none;
+            }
+        }
+
+        &:checked + .site-header {
+            .site-nav {
+                display: block;
+            }
+
+            .toggle-nav-btn {
+                .fa-bars {
+                    display: none;
+                }
+
+                .fa-times {
+                    display: block;
+                }
+            }
+        }
     }
 }

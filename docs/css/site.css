@@ -204,7 +204,8 @@ blockquote .author::before {
 .site-header {
   border-bottom: 1px solid var(--color-border-default);
   margin-bottom: var(--spacing-layout-elements);
-  padding-bottom: calc(var(--spacing-layout-elements) / 2); }
+  padding-bottom: calc(var(--spacing-layout-elements) / 2);
+  position: relative; }
 
 .site-title {
   margin: 0;
@@ -220,38 +221,40 @@ blockquote .author::before {
   padding-top: calc(var(--spacing-layout-elements) / 2); }
 
 .site-nav > ul {
-  display: flex;
   padding: 0; }
-  .site-nav > ul ul {
-    width: 15em;
-    padding: 0.5em;
-    display: block;
-    pointer-events: none;
-    position: absolute;
-    top: 100%;
-    left: 0; }
-    .site-nav > ul ul li {
-      opacity: 0;
-      transform: translateY(-1em);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
-      .site-nav > ul ul li:nth-child(1) {
-        transition-delay: 0.1s; }
-      .site-nav > ul ul li:nth-child(2) {
-        transition-delay: 0.2s; }
-      .site-nav > ul ul li:nth-child(3) {
-        transition-delay: 0.3s; }
-      .site-nav > ul ul li:nth-child(4) {
-        transition-delay: 0.4s; }
-      .site-nav > ul ul li:nth-child(5) {
-        transition-delay: 0.5s; }
-      .site-nav > ul ul li:nth-child(6) {
-        transition-delay: 0.6s; }
-      .site-nav > ul ul li:nth-child(7) {
-        transition-delay: 0.7s; }
-      .site-nav > ul ul li:nth-child(8) {
-        transition-delay: 0.8s; }
-      .site-nav > ul ul li:nth-child(9) {
-        transition-delay: 0.9s; }
+  @media (min-width: 1024px) {
+    .site-nav > ul {
+      display: flex; }
+      .site-nav > ul ul {
+        width: 15em;
+        padding: 0.5em;
+        display: block;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        left: 0; }
+        .site-nav > ul ul li {
+          opacity: 0;
+          transform: translateY(-1em);
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+          .site-nav > ul ul li:nth-child(1) {
+            transition-delay: 0.1s; }
+          .site-nav > ul ul li:nth-child(2) {
+            transition-delay: 0.2s; }
+          .site-nav > ul ul li:nth-child(3) {
+            transition-delay: 0.3s; }
+          .site-nav > ul ul li:nth-child(4) {
+            transition-delay: 0.4s; }
+          .site-nav > ul ul li:nth-child(5) {
+            transition-delay: 0.5s; }
+          .site-nav > ul ul li:nth-child(6) {
+            transition-delay: 0.6s; }
+          .site-nav > ul ul li:nth-child(7) {
+            transition-delay: 0.7s; }
+          .site-nav > ul ul li:nth-child(8) {
+            transition-delay: 0.8s; }
+          .site-nav > ul ul li:nth-child(9) {
+            transition-delay: 0.9s; } }
 
 .site-nav li {
   display: block;
@@ -292,6 +295,36 @@ blockquote .author::before {
 .site-nav li.selected > a i.fas::before,
 .site-nav a:hover i.fas::before {
   color: #fff; }
+
+.toggle-nav-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  height: 3em;
+  position: absolute;
+  top: -0.25em;
+  right: 0.5em; }
+  .toggle-nav-btn .fa-times {
+    display: none; }
+
+.toggle-nav {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  @media (max-width: 1023px) {
+    .toggle-nav + .site-header .toggle-nav-btn {
+      display: flex; }
+    .toggle-nav + .site-header .site-nav {
+      display: none; }
+    .toggle-nav:checked + .site-header .site-nav {
+      display: block; }
+    .toggle-nav:checked + .site-header .toggle-nav-btn .fa-bars {
+      display: none; }
+    .toggle-nav:checked + .site-header .toggle-nav-btn .fa-times {
+      display: block; } }
 
 .modal {
   position: fixed;
