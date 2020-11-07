@@ -1,13 +1,39 @@
 <nav class="site-nav location-{{ include.location }}">
     <ul>
-        {% assign nav = site.pages | sort:"order" %} {% for item in nav %} {% if item.title and item.nomainnav != 1%}
+    {% for item in site.navigation %}
         <li {% if item.url == page.url %}class="selected"{% endif %}>
             <a href="{{ site.baseurl }}{{ item.url }}">
-                {% if item.icon %}
-                <i class="fas {{ item.icon }}"></i>
-                {% endif %} {{ item.title }}
+                {% if item.icon %}<i class="fas {{ item.icon }}"></i>{% endif %}
+                {{ item.text }}
             </a>
+
+            {% if item.items %}
+            <ul>
+                {% for subitems in item.items %}
+                <li {% if subitems.url == page.url %}class="selected"{% endif %}>
+                    <a href="{{ site.baseurl }}{{ subitems.url }}">
+                        {% if subitems.icon %}<i class="fas {{ subitems.icon }}"></i>{% endif %}
+                        {{ subitems.text }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </li>
-        {% endif %} {% endfor %}
+    {% endfor %}
     </ul>
+
+    <!-- <ul>
+        {% assign nav = site.pages | sort:"order" %}
+        {% for item in nav %}
+            {% if item.title and item.nomainnav != 1 %}
+            <li {% if item.url == page.url %}class="selected"{% endif %}>
+                <a href="{{ site.baseurl }}{{ item.url }}">
+                    {% if item.icon %}<i class="fas {{ item.icon }}"></i>{% endif %}
+                    {{ item.title }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul> -->
 </nav>
