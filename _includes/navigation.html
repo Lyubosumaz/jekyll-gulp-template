@@ -5,7 +5,10 @@
 <nav class="site-nav location-{{ include.location }}">
     <ul>
     {% for item in site.navigation %}
-        <li {% if item.url == page.url %}class="selected"{% endif %}>
+        <li
+            {% if item.url == page.url %}class="selected"{% endif %}
+            {% if post.type == post and item.text == 'Blog' %}class="selected"{% endif %}
+        >
             <a href="{{ site.baseurl }}{{ item.url }}">
                 {% if item.icon %}<i class="fas {{ item.icon }}"></i>{% endif %}
                 {{ item.text }}
