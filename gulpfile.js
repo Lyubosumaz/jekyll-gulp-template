@@ -3,6 +3,9 @@
 let gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     exec = require('gulp-exec'),
+    csso = require('gulp-csso'),
+    size = require('gulp-size'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
     cp = require('child_process');
@@ -10,8 +13,14 @@ let gulp = require('gulp'),
 gulp.task('scss', function () {
     return gulp
         .src('_assets/scss/**/*.scss')
+        .pipe(size())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
+        .pipe(size())
+        .pipe(exec(`git checkout master`))
+        .pipe(csso())
+        .pipe(size())
+        .pipe(sourcemaps.write('../maps', { addComment: false }))
         .pipe(gulp.dest('./docs/css'))
         .pipe(browserSync.stream({ match: '**/*.css' }));
 });
